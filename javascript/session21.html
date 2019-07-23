@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="js/action21.js"></script>
+	<style type="text/css">
+		.header
+		{
+			grid-area: header;
+  			grid-row-start: 1;
+  			grid-row-end: 1;
+ 			 background-color: tomato;
+  			color: white;
+  			text-align: right;
+  			border: none;
+  			overflow: hidden;
+		}
+		.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 80px 80px 80px 80px;
+  grid-template-rows: 80px 80px 80px 80px 80px;
+  grid-template-areas: 
+  "header header header header" 
+  "main main main main" 
+  "main main main main" 
+  "main main main main" 
+  "main main main main" 
+  "main main main main";
+}
+button
+{
+	background-color: dimgray;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: 4px 2px;
+  border-radius: 50%;
+  font-size: 26px;
+}
+.silver {
+  background-color: silver;
+  color: black;
+}
+
+.orange {
+  background-color: orange;
+}
+	</style>
+	<title>calculator</title>
+</head>
+<body style="
+    font-size: 64px;
+    background-color: black;
+">
+	<center>	
+<div class="container">
+<div class="header" id="header"></div>
+  <button class="silver" onclick="display('7')">7</button>
+  <button class="silver" onclick="display('8')">8</button>
+  <button class="silver" onclick="display('9')">9</button>
+  <button class="orange" onclick="mul()">*</button>
+  <button class="silver" onclick="display('4')">4</button>
+  <button class="silver" onclick="display('5')">5</button>
+  <button class="silver" onclick="display('6')">6</button>
+  <button class="orange" onclick="minus()">-</button>
+  <button class="silver" onclick="display('1')">1</button>
+  <button class="silver" onclick="display('2')">2</button>
+  <button class="silver" onclick="display('3')">3</button>
+  <button class="orange" onclick="plus()">+</button>
+  <button class="silver" onclick="display('0')">0</button>
+  <button class="silver" onclick="display('.')">.</button>
+  <button class="silver" onclick="solve()">=</button>
+  <button class="orange" onclick="division()">/</button>
+  <button class="silver" onclick="backspace()"><</button>
+  <button class="silver" onclick="mod()">%</button>
+  <button class="silver" onclick="clr()">c</button>
+  <button class="orange" onclick="per()">per</button>
+</div>
+<p id="result" style="color: white;"></p>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>javaScriptsession2 </title>
+        <!-- <script src="js/js2.js"> -->
+            
+        <!-- </script> -->
+    </head>
+    <body onload="cookie_fun()">
+        <center>
+            <form name=f1>
+                first name:<input type=text id=fname_value><br>
+                last name:<input type=text id=lname><br>
+                age:<input type=number id=age><br>
+                <input type=submit onclick=myfun() value="Store & Display"><br>
+                <div id=rtv_object><h2>coockies:-</h2></div>
+            </form>
+        </center>   
+            <script>
+            function myfun()
+            {
+    
+                let fname=document.getElementById("fname_value").value;
+                let lname=document.getElementById("lname").value;
+                let age=document.getElementById("age").value;
+                //localStorage.name="fname";
+                let myobject={
+                    first_name:fname,
+                    last_name:lname,
+                    my_age:age,
+                    full_name : function(){
+                        return this.first_name +" "+this.last_name;
+                    }
+                };
+                setCookie("first name",myobject.first_name);
+                setCookie("last name",myobject.last_name);
+                setCookie("your age",myobject.my_age);
+                setCookie("full name",myobject.full_name())
+                function setCookie(name,value)
+                {
+                    document.cookie=name+"="+value;
+                }
+               }
+               function cookie_fun()
+               {
+                   let mycookie=document.cookie.split(';');
+                   for (let i=0;i<mycookie.length;i++)
+                   {
+                    document.getElementById("rtv_object").innerHTML+=mycookie[i].replace("="," : ")+"<br>";
+                   }
+            
+               }
+            </script>
+        </body>
+</html>
